@@ -259,7 +259,7 @@ if __name__ == '__main__':
     
     for mem in MEM_REGION_SIZES:
         for tuple in ld_tuples:
-            filename = f'1_load_double_mixed_{mem}/{ST_TYPE}-{"-".join(tuple)}.ptx'
+            filename = f'1_loadmixed_{mem}/{ST_TYPE}-{"-".join(tuple)}.ptx'
             
             write_file(filename, ST_TYPE, [tuple], mem)
             
@@ -270,5 +270,5 @@ if __name__ == '__main__':
             with open(filename.replace('ptx', 'sass'), 'w') as f:
                 f.write(sass_output.stdout.decode('utf-8'))
         
-        subprocess.run(['cp', 'runPTX', f'1_load_double_mixed_{mem}'])
-        subprocess.run(['cp', 'run-all.sh', f'1_load_double_mixed_{mem}'])
+        subprocess.run(['cp', 'runPTX', f'1_loadmixed_{mem}'])
+        subprocess.run(['cp', 'run-all.sh', f'1_loadmixed_{mem}'])
