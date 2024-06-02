@@ -13,3 +13,7 @@ python3 load-generator.py 2
 ```
 
 3. Running all the generated PTX files
+
+```bash
+./run.sh
+```
